@@ -1,0 +1,6 @@
+<ion-searchbar #searchbar (ionInput)="getFilteredNodes($event)" #search></ion-searchbar>
+<p-treeTable *ngIf="treeNodes.length" #treeTable [(selection)]="selectedNodes" [metaKeySelection]="metaKeySelection" selectionMode="multiple"
+    [value]="treeNodes" (onNodeExpand)="loadChildren($event)" (onNodeSelect)="selectNodes($event)" (onNodeUnselect)="unselectNodes($event)">
+    <p-column [field]="fieldName" [header]="headerName"></p-column>
+</p-treeTable>
+<div *ngIf="!treeNodes.length && notFoundDelay" class="notFound">No nodes found</div>

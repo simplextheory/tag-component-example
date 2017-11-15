@@ -1,0 +1,10 @@
+<div class="tag-container" (outsideElementClick)="closeDropdown()">
+    <ion-chip *ngFor="let node of selectedNodes">
+        <ion-icon *ngIf="node.icon" name="{{node.icon}}"></ion-icon>
+        <ion-label>{{node.name}}</ion-label>
+        <button ion-button clear (click)="remove(node)">
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-chip>
+    <button type="button" class="search-button" ion-button round clear (click)="presentPopover()"><ion-icon name="search"></ion-icon></button>
+</div>
